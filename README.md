@@ -1,7 +1,7 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
+- Rhavi Marques Cordeiro Andrade
 - Pessoa 2
 - Pessoa 3
 
