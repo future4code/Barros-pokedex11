@@ -2,10 +2,10 @@
 
 Nome dos integrantes: 
 - Rhavi Marques Cordeiro Andrade
-- Pessoa 2
+- Marcio Emmanuel Gonçalves
 - Pessoa 3
 
-Link do Surge: www.link.com.br
+Link do Surge: xxxxxmomentous-hair.surge.sh
 
 O que funciona:
 - Item 1
