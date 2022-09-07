@@ -28,29 +28,28 @@ export function HomePage() {
 
   return (
     <Global>
-      
-            <Title src={pokemoon}></Title>
-        
-          <DivButtons>
-            <Buttons
-              onClick={() => goToPokedex(navigate)}>Ir para Pokedex
-            </Buttons>
-          </DivButtons>
+
+      <Title src={pokemoon}></Title>
+
+      <DivButtons>
+        <Buttons onClick={() => goToPokedex(navigate)}>Ir para Pokedex </Buttons>
+      </DivButtons>
 
       <Container>
-        
-          {allPokemons &&
-            allPokemons.map((pokemon) => {
-              return (
-                <PokeCard
-                  image={pokemon.data && pokemon.data.sprites.front_default}
-                  alt={pokemon.data && pokemon.data.name}
-                  onClick={() => goToDetails(navigate)}
-                  pokeId={pokemon.data && pokemon.data.id}
-                />
-              );
-            })}
-        
+
+        {allPokemons &&
+          allPokemons.map((pokemon) => {
+            return (
+              <PokeCard
+                name={pokemon.data && pokemon.data.name}
+                image={pokemon.data && pokemon.data.sprites.front_default}
+                alt={pokemon.data && pokemon.data.name}
+                onClick={() => goToDetails(navigate)}
+                pokeId={pokemon.data && pokemon.data.id}
+              />
+            );
+          })}
+
       </Container>
     </Global>
   );
