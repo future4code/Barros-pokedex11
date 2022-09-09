@@ -1,17 +1,9 @@
 import styled from "styled-components";
 
-export const PokedexMain = styled.div`
-    width: 100%;
-    height: 90%;
-    background: red;
-    display: flex;
-    flex-wrap: wrap;
-`
-
-export const PokeCardBase = styled.div`
+export const CardPok = styled.div`
     width: 200px;
     height: 300px;
-    background: black;
+    background: yellow;
     border-radius: 10px;
     margin: 5px 20px;
     text-align: center;
@@ -19,13 +11,13 @@ export const PokeCardBase = styled.div`
     flex-direction: column;
     border-radius: 10px;
     flex-wrap: wrap;
-
-`;
+    
+`
 
 export const NameCard = styled.div`
     width: 100%;
     height: 15%;
-    background: blue;
+    /* background: red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +25,7 @@ export const NameCard = styled.div`
 export const ImageCard = styled.div`
     width: 100%;
     height: 70%;
-    background: white;
+    /* background: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,13 +37,13 @@ export const ImageCard = styled.div`
 export const ButtonCard = styled.div`
     width: 100%;
     height: 15%;
-    background: black;
+    /* background: green; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     img{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         :hover{
             transition: .5s;
             transform: scale(1.2);
