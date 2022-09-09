@@ -7,9 +7,9 @@ function TittleContainer (){
     const navigate = useNavigate()
     return(
         <TittleCamp>
-            <button onClick={(()=>{navigate("/pokedex")})}>pokedex</button>
-            <button onClick={(()=>{navigate("/detalhesDoPokemon")})}>detalhes pokemon</button>
             <button onClick={(()=>{navigate("/ListaDePokemons")})}>lista de pokemon</button>
+            <button onClick={(()=>{navigate("/pokedex")})}>pokedex</button>
+            {/* <button onClick={(()=>{navigate("/detalhesDoPokemon")})}>detalhes pokemon</button> */}
         </TittleCamp>
     )
 }

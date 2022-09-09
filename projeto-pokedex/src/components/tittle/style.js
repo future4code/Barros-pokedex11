@@ -5,6 +5,9 @@ export const TittleCamp = styled.div`
     height: 10%;
     background: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    button{
+        margin: 0 20px;
+    }
 `
