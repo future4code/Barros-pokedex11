@@ -1,12 +1,49 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { PokemonListMain } from "./style";
+import { LayoutContainer } from "../../style"
 import TittleContainer from "../../components/tittle";
-import {LayoutContainer} from "../../style"
+import PokemonCard from "../../components/pokemonCard";
+import useRequestData from "../../Hooks/useRequestedata";
+import { BASE_URL } from "../../Hooks/constants ";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import {GlobalPokemonsContext} from "../../context/globalStateContext"
 
 function PokemonList(){
+    const context = useContext(GlobalPokemonsContext)
+    const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false)
+
+    const getPokemons = ()=>{
+        let endPoints = []
+        for(let i=1;i<21;i++){
+            endPoints.push(`${BASE_URL}pokemon/${i}`)
+        }
+        axios.all(endPoints.map((endPoint)=> axios.get(endPoint))).then((resp)=>{context.setPokemons(resp)})
+    }
+
+    useEffect(()=>{
+        // isLoading(true)
+        getPokemons()
+    },[])
+
+    const listPokemons = context.pokemons.map((poke, index)=>{
+        return(
+            <PokemonCard key={index}
+                name={poke.data.name}
+                image = {poke.data.sprites.front_default}
+                pokeId = {poke.data.id}
+            />
+        )
+    })
+
     return(
         <LayoutContainer>
-            <TittleContainer/>
-            <h1>Lista de Pokemons</h1>
+           <TittleContainer/>
+           <PokemonListMain>
+                {isLoading&&"...Carregando"}
+                {!isLoading&&listPokemons}
+            </PokemonListMain>
         </LayoutContainer>
     )
 }
