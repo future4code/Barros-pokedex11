@@ -17,7 +17,7 @@ export const Title = styled.img`
  
 `;
 
-export const DivButtons = styled.div `
+export const DivButtons = styled.div`
     display: flex;
     justify-content: center;
 `
@@ -106,7 +106,7 @@ export const ContainerCards = styled.main`
     }
 `
 
-export const CardSection =styled.section`
+export const CardSection = styled.section`
     display: flex;
     align-items: center;
     flex-direction: column;

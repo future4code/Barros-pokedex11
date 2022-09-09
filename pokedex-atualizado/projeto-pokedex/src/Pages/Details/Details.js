@@ -8,19 +8,19 @@ import { ButtonLeft, ButtonRight, CardImage, CardSection, Container, ContainerCa
 import "./style.css";
 
 export function Details() {
-    const navigate = useNavigate()
-    const {pokeId} = useParams();
-    const [pokemonDetails, setPokemonDetails] = useState()
-    
-    useEffect(()=>{
-    const getPokeDetails = () =>{
-      axios.get(`${BASE_URL}${pokeId}`,{
-          })
-          .then((response)=>{setPokemonDetails(response.data)})
-          .catch((erro)=>{console.log(erro)})
-  }
-      console.log(getPokeDetails())
-  },[`${BASE_URL}${pokeId}`])
+  const navigate = useNavigate()
+  const { pokeId } = useParams();
+  const [pokemonDetails, setPokemonDetails] = useState()
+
+  useEffect(() => {
+    const getPokeDetails = () => {
+      axios.get(`${BASE_URL}${pokeId}`, {
+      })
+        .then((response) => { setPokemonDetails(response.data) })
+        .catch((erro) => { console.log(erro) })
+    }
+    console.log(getPokeDetails())
+  }, [`${BASE_URL}${pokeId}`])
 
 
   const nome = pokemonDetails && pokemonDetails.species.name
@@ -33,70 +33,70 @@ export function Details() {
   const imagemFrente = pokemonDetails && pokemonDetails.sprites && pokemonDetails.sprites.versions["generation-v"]["black-white"].animated.front_default
   const imagemTraz = pokemonDetails && pokemonDetails.sprites && pokemonDetails.sprites.versions["generation-v"]["black-white"].animated.back_default
   const typePoke = pokemonDetails && pokemonDetails.types && pokemonDetails.types.map((tipo) => {
-      return(
-          <span>{tipo.type.nome}</span>
-          )
-      })
-      
-  const moves = pokemonDetails && pokemonDetails.moves && pokemonDetails.moves.map((move)=>{
-    return(
-      <p>{move.move.name}</p>
+    return (
+      <span>{tipo.type.name} </span>
+    )
+  })
+
+  const moves = pokemonDetails && pokemonDetails.moves && pokemonDetails.moves.map((move) => {
+    return (
+      <p>{move.move.name} </p>
     )
   })
   return (
     <Global>
-        
-           <Title src={detailsPoke}></Title>
 
-           <DivButtons>
-              <ButtonLeft
-                onClick={() => goToBack(navigate)}>Voltar
-              </ButtonLeft>
+      <Title src={detailsPoke}></Title>
 
-              <ButtonRight
-                onClick={() => goToPokedex(navigate)}>Voltar Pokedex
-              </ButtonRight>
-            </DivButtons>
-            
-        <ContainerCards>
-          <Container>
-            <CardSection>
-              <CardImage>
+      <DivButtons>
+        <ButtonLeft
+          onClick={() => goToBack(navigate)}>Voltar
+        </ButtonLeft>
+
+        <ButtonRight
+          onClick={() => goToPokedex(navigate)}>Voltar Pokedex
+        </ButtonRight>
+      </DivButtons>
+
+      <ContainerCards>
+        <Container>
+          <CardSection>
+            <CardImage>
               <Images
-                  src={imagemFrente}
-                  alt="pokemon frente" />
-              </CardImage>
-              
-              <CardImage>
-                <Images
-                  src={imagemTraz}
-                  alt="pokemon costas"/>
+                src={imagemFrente}
+                alt="pokemon frente" />
             </CardImage>
-                  </CardSection>
 
-            <SectStatus>
-              <h1>{nome}</h1>
-              <p>HP: {hp}</p>
-              <p>Attack: {ataque}</p>
-              <p>Defense: {defesa}</p>
-              <p>Special-atack: {ataqueEspecial}</p>
-              <p>Special-defense: {defesaEspecial}</p>
-              <p>Speed {velocidade}</p>
+            <CardImage>
+              <Images
+                src={imagemTraz}
+                alt="pokemon costas" />
+            </CardImage>
+          </CardSection>
 
-            </SectStatus>
+          <SectStatus>
+            <h1>{nome}</h1>
+            <p>HP: {hp}</p>
+            <p>Attack: {ataque}</p>
+            <p>Defense: {defesa}</p>
+            <p>Special-atack: {ataqueEspecial}</p>
+            <p>Special-defense: {defesaEspecial}</p>
+            <p>Speed {velocidade}</p>
 
-            <SectDetails>
-              <div>
-                <p>Type: {typePoke}</p>
-              </div>
-              <Move>
-                <h5>Moves</h5>
-                <p>{moves}</p>
-              </Move>
-            </SectDetails>
-          </Container>
-        </ContainerCards>
-      </Global>
-    );
-    
+          </SectStatus>
+
+          <SectDetails>
+            <div>
+              <p>Type: {typePoke}</p>
+            </div>
+            <Move>
+              <h5>Moves</h5>
+              <p>{moves}</p>
+            </Move>
+          </SectDetails>
+        </Container>
+      </ContainerCards>
+    </Global>
+  );
+
 }
