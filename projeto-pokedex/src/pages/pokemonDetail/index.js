@@ -9,7 +9,6 @@ import { ImagemCamp, MovesCamp, PokemonDetailMain, StatsCamp, TypeMoveCamp, Type
 function PokemonDetails(){
  
     const context = useContext(GlobalPokemonsContext)
-    console.log(context.pokeDetail);
 
     useEffect(()=>{
         axios
@@ -20,7 +19,6 @@ function PokemonDetails(){
     },[])
 
     const detailPok = context.pokeDetail && context.pokeDetail.map((pokemon, i)=>{
-        console.log(pokemon);
         return(
             <PokemonDetailMain key={i}>
                 <ImagemCamp>
@@ -29,9 +27,9 @@ function PokemonDetails(){
                 </ImagemCamp>
                 <StatsCamp>
                     <h2>Habilidades</h2>
-                    {pokemon.stats.map((stat)=>{
+                    {pokemon.stats.map((stat, i)=>{
                         return(
-                            <div>
+                            <div key={i}>
                                 <label>{stat.stat.name}</label>
                                 <p>{stat.base_stat}</p>   
                             </div>

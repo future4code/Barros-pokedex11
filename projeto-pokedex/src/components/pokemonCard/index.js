@@ -13,12 +13,13 @@ function PokemonCard ({name,image, pokeId}){
            
 
     const addPokedex = ()=>{
+        context.setPokemons(context.pokemons.filter(poke => poke.data.name !== name))
         localStorage.setItem("nameDetail", name)
         axios
         .get(`${BASE_URL}pokemon/${name}`)
         .then((resp)=>{
         context.setPokedex([...context.pokedex, resp.data])
-    })
+        })
     }
 
     const detailsPok = ()=>{
