@@ -3,7 +3,7 @@
 Nome dos integrantes: 
 - Rhavi Marques Cordeiro Andrade
 - Marcio Emmanuel Gonçalves
-- Pessoa 3
+- José Augusto Pereira Morcelli
 
 Link do Surge: perxxxiodic-rub.surge.sh
 
