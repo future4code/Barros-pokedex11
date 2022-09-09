@@ -2,14 +2,14 @@
 
 A ideia central deste projeto é realizar uma integração com a POKE API Pokedex. Ela é uma API pública, bastante utilizada como fonte de dados para aplicações focadas em aprendizado de programação.
 
-O projeto deve ter as seguintes três páginas:
+## O projeto deve ter as seguintes três páginas:
 
 Home: o usuário deve receber uma lista de pokemons vinda da API. Ele pode armazenar Pokemons em sua Pokedex clicando em cada um.
 Pokedex: o usuário deve pode ver os Pokemons que foram adicionados em sua Pokedex.
 Detalhe do Pokemon: Deve ser possível ir para uma página de detalhes do Pokemon ao clicar no mesmo, estando tanto na Home quanto na Pokedex.
 
 
-Nome dos integrantes: 
+## Nome dos integrantes: 
 - Rhavi Marques Cordeiro Andrade
 - Marcio Emmanuel Gonçalves
 - José Augusto Pereira Morcelli
