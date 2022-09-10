@@ -7,7 +7,21 @@ export const TittleCamp = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    button{
-        margin: 0 20px;
+    color: white;
+    img{
+        position: relative;
+        top: 5px;
+        margin: 0 40px;
+        width: 40px;
+        height: 40px;
+        :hover{
+            transition: .4s ease-in-out;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
     }
-`
+    h1{
+        position: relative;
+        left: 150px;
+    }
+    `

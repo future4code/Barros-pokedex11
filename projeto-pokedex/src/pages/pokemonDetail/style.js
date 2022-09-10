@@ -5,12 +5,13 @@ export const PokemonDetailMain = styled.div`
     height: 90%;
     background: blue;
     display: flex;
+    color: white;
+    background: black;
 `
 
 export const ImagemCamp = styled.div`
     width: 33%;
     height: 100%;
-    background: grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +25,6 @@ export const ImagemCamp = styled.div`
 export const StatsCamp = styled.div`
     width: 33%;
     height: 100%;
-    background: red;
     text-align: center;
     div{
         display: flex;
@@ -49,7 +49,6 @@ export const StatsCamp = styled.div`
 export const TypeMoveCamp = styled.div`
     width: 33%;
     height: 100%;
-    background: yellow;
     display: flex;
     flex-direction: column;
 `
@@ -57,7 +56,6 @@ export const TypeMoveCamp = styled.div`
 export const TypesCamp = styled.div`
     width: 100%;
     height: 10%;
-    background: crimson;
     display: flex;
     justify-content: space-around;
     div{
@@ -78,7 +76,6 @@ export const TypesCamp = styled.div`
 export const MovesCamp = styled.div`
     width: 100%;
     height: 90%;
-    background: orangered;
     display: flex;
     align-items: center;
     flex-direction: column;
