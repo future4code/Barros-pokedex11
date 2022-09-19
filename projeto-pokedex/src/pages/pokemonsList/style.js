@@ -11,7 +11,7 @@ export const LayoutBase = styled.div`
 export const PokemonListMain = styled.div`
     width: 100%;
     height: 90%;
-    background: purple;
+    background: black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

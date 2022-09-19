@@ -3,15 +3,12 @@ import { PokemonListMain } from "./style";
 import { LayoutContainer } from "../../style"
 import TittleContainer from "../../components/tittle";
 import PokemonCard from "../../components/pokemonCard";
-import useRequestData from "../../Hooks/useRequestedata";
 import { BASE_URL } from "../../Hooks/constants ";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import {GlobalPokemonsContext} from "../../context/globalStateContext"
 
 function PokemonList(){
     const context = useContext(GlobalPokemonsContext)
-    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false)
 
     const getPokemons = ()=>{
@@ -23,7 +20,6 @@ function PokemonList(){
     }
 
     useEffect(()=>{
-        // isLoading(true)
         getPokemons()
     },[])
 

@@ -6,15 +6,17 @@ import { LayoutContainer } from "../../style";
 import { ButtonCard, ImageCard, NameCard, PokeCardBase, PokedexMain } from "./style";
 import InfoImg from "../../imgs/info.png"
 import DelImg from "../../imgs/remove.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Pokedex(){
     const context = useContext(GlobalPokemonsContext)
     const navigate = useNavigate()
 
     const removePokemon = (name)=>{
-            const remove = context.pokedex.filter((pokemon)=>name !== pokemon.name)
-            context.setPokedex(remove)
-        
+        const remove = context.pokedex.filter((pokemon)=>name !== pokemon.name)
+        context.setPokedex(remove)
+        toast.success("pokemon Removido!")
     }
     const detailsPok = (name)=>{
         localStorage.setItem("nameDetail", name)
@@ -44,6 +46,7 @@ function Pokedex(){
             <PokedexMain>
                 {listPoke}
             </PokedexMain>
+            <ToastContainer/>
         </LayoutContainer>
     )
 }
